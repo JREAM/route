@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# If you are in a subfolder, you don't need this:
+RewriteBase /route/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.+)$ index.php?uri=$1 [QSA,L]
